@@ -1,54 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+}
+
 body {
-  background: linear-gradient(to bottom, #0f0f3d, #000);
-  color: white;
-  font-family: 'Orbitron', sans-serif;
-  text-align: center;
-  padding: 30px;
-  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  font-family: "Orbitron", sans-serif;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
 
-.container {
-  max-width: 500px;
-  margin: auto;
-  background: rgba(0, 0, 50, 0.6);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px white;
-}
-
-input, select, button {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: none;
-}
-
-button {
-  font-family: 'Orbitron', sans-serif; /* Try 'Roboto', 'Courier New', or any other */
-  font-size: 16px;
-  font-weight: bold;
-}
-
-button {
-  background: #00f5ff;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-label {
-  font-family: 'Orbitron', sans-serif; /* Replace with any font you've linked */
-  font-size: 1rem;
-  color: #ffffff; /* Optional: choose a color that suits your theme */
-  margin-top: 10px;
-  display: block;
-}
-
-#story {
-  margin-top: 20px;
-  padding: 15px;
-  background: #222;
-  border-radius: 10px;
-  font-size: 1.1em;
+/* Animated stars background */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: sparkle 20s linear infinite;
+  z-index: -1;
 }

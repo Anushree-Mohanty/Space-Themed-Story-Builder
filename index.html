@@ -1,76 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Space Story Builder</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Story Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>🪐 Space Story Builder</h1>
-    <p>Create your own cosmic adventure!</p>
+    <div class="stars"></div>
+    <div class="container">
+        <header>
+            <h1 class="title">🚀 Cosmic Story Builder 🌌</h1>
+            <p class="subtitle">Create epic space adventures with just a few clicks!</p>
+        </header>
 
-    <input type="text" id="heroName" placeholder="Enter astronaut's name" />
+        <main class="story-builder">
+            <div class="form-section">
+                <div class="input-group">
+                    <label for="protagonist">Choose Your Hero:</label>
+                    <select id="protagonist" class="space-select">
+                        <option value="">Select a protagonist...</option>
+                        <option value="brave astronaut">Brave Astronaut</option>
+                        <option value="curious alien explorer">Curious Alien Explorer</option>
+                        <option value="advanced AI robot">Advanced AI Robot</option>
+                        <option value="space pirate captain">Space Pirate Captain</option>
+                        <option value="intergalactic scientist">Intergalactic Scientist</option>
+                        <option value="telepathic being">Telepathic Being</option>
+                    </select>
+                </div>
 
-    <label>Choose a Planet:</label>
-    <select id="planet">
-      <option value="Mars">Mars</option>
-      <option value="Saturn">Saturn</option>
-      <option value="Neptune">Neptune</option>
-      <option value="Mars">Mars</option>
-      <option value="Jupiter">Jupiter</option>
-      <option value="Venus">Venus</option>
-      <option value="Pluto">Pluto</option>
-      <option value="Titan">Titan</option>
-      <option value="Europa">Europa</option>
-      <option value="Kepler-22b">Kepler-22b</option>
-    </select>
+                <div class="input-group">
+                    <label for="setting">Choose Your Setting:</label>
+                    <select id="setting" class="space-select">
+                        <option value="">Select a setting...</option>
+                        <option value="a distant alien planet with purple skies">Distant Alien Planet</option>
+                        <option value="a massive space station orbiting Jupiter">Space Station Near Jupiter</option>
+                        <option value="the bridge of an interstellar spaceship">Interstellar Spaceship</option>
+                        <option value="a mysterious asteroid mining facility">Asteroid Mining Facility</option>
+                        <option value="the surface of a moon with crystal formations">Crystal Moon Surface</option>
+                        <option value="a bustling intergalactic marketplace">Intergalactic Marketplace</option>
+                    </select>
+                </div>
 
-    <label>Choose a Companion:</label>
-    <select id="companion">
-      <option value="a loyal robot">a loyal robot</option>
-      <option value="an alien friend">an alien friend</option>
-      <option value="a space cat">a space cat</option>
-      <option value="a retired space pirate">a retired space pirate</option>
-      <option value="a shape-shifting AI">a shape-shifting AI</option>
-      <option value="a sentient plant">a sentient plant</option>
-      <option value="a telepathic jellyfish">a telepathic jellyfish</option>
-      <option value="a holographic historian">a holographic historian</option>
-      <option value="a cosmic bard">a cosmic bard</option>
-      <option value="a solar dragon hatchling">a solar dragon hatchling</option>
-    </select>
+                <div class="input-group">
+                    <label for="conflict">Choose Your Adventure:</label>
+                    <select id="conflict" class="space-select">
+                        <option value="">Select an adventure type...</option>
+                        <option value="discovers a hidden alien artifact that holds ancient secrets">Ancient Artifact Discovery</option>
+                        <option value="must prevent an asteroid from destroying a peaceful colony">Asteroid Crisis</option>
+                        <option value="encounters a friendly alien species seeking help">First Contact Mission</option>
+                        <option value="investigates mysterious energy readings from deep space">Deep Space Mystery</option>
+                        <option value="races against time to repair critical life support systems">Emergency Repair Mission</option>
+                        <option value="stumbles upon a wormhole leading to an unknown galaxy">Wormhole Adventure</option>
+                    </select>
+                </div>
 
-    <label>Mission Type:</label>
-    <select id="mission">
-      <option value="explore a black hole">explore a black hole</option>
-      <option value="rescue a lost crew">rescue a lost crew</option>
-      <option value="collect rare minerals">collect rare minerals</option>
-      <option value="diplomatic peace talks with alien species">diplomatic peace talks with alien species</option>
-      <option value="repair a damaged space station">repair a damaged space station</option>
-      <option value="investigate a mysterious signal">investigate a mysterious signal</option>
-      <option value="map uncharted galaxies">map uncharted galaxies</option>
-      <option value="retrieve ancient alien technology">retrieve ancient alien technology</option>
-      <option value="evacuate a colony before asteroid impact">evacuate a colony before asteroid impact</option>
-      <option value="track a space criminal through the nebula">track a space criminal through the nebula</option>
-    </select>
+                <div class="input-group">
+                    <label for="companion">Choose Your Companion:</label>
+                    <select id="companion" class="space-select">
+                        <option value="">Select a companion...</option>
+                        <option value="a witty holographic AI assistant">Holographic AI Assistant</option>
+                        <option value="a loyal alien pet with special abilities">Alien Pet Companion</option>
+                        <option value="an experienced space veteran">Space Veteran</option>
+                        <option value="a mysterious figure in a silver suit">Mysterious Silver Figure</option>
+                        <option value="a group of friendly space traders">Space Trader Crew</option>
+                        <option value="a sentient spaceship computer">Sentient Ship Computer</option>
+                    </select>
+                </div>
 
-    <label>Choose a Genre:</label>
-    <select id="genre">
-      <option value="epic">Epic Adventure</option>
-      <option value="comedy">Comedy</option>
-      <option value="mystery">Mystery</option>
-      <option value="horror">Horror</option>
-      <option value="romance">Romance</option>
-    </select>
+                <div class="input-group">
+                    <label for="customElement">Add Your Own Element:</label>
+                    <input type="text" id="customElement" class="space-input" placeholder="Add a custom story element...">
+                </div>
 
-    <button onclick="generateStory()">🚀 Generate Story</button>
+                <div class="button-group">
+                    <button id="generateStory" class="cosmic-button primary">Generate Story</button>
+                    <button id="clearForm" class="cosmic-button secondary">Clear All</button>
+                </div>
+            </div>
 
-    <div id="story"></div>
-  </div>
+            <div class="story-output">
+                <div id="storyDisplay" class="story-container">
+                    <div class="placeholder">
+                        <div class="planet-icon">🪐</div>
+                        <p>Your cosmic adventure will appear here...</p>
+                        <p class="hint">Fill out the form and click "Generate Story" to begin!</p>
+                    </div>
+                </div>
+                
+                <div class="story-actions" id="storyActions" style="display: none;">
+                    <button id="saveStory" class="cosmic-button">Save Story</button>
+                    <button id="shareStory" class="cosmic-button">Copy to Clipboard</button>
+                    <button id="newStory" class="cosmic-button">Create New Story</button>
+                </div>
+            </div>
+        </main>
 
-  <script src="script.js"></script>
+        <footer>
+            <p>🌟 Explore the infinite possibilities of space storytelling! 🌟</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
