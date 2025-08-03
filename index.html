@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Space Story Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🪐 Space Story Builder</h1>
+    <p>Create your own cosmic adventure!</p>
+
+    <input type="text" id="heroName" placeholder="Enter astronaut's name" />
+
+    <label>Choose a Planet:</label>
+    <select id="planet">
+      <option value="Mars">Mars</option>
+      <option value="Saturn">Saturn</option>
+      <option value="Neptune">Neptune</option>
+    </select>
+
+    <label>Choose a Companion:</label>
+    <select id="companion">
+      <option value="a loyal robot">a loyal robot</option>
+      <option value="an alien friend">an alien friend</option>
+      <option value="a space cat">a space cat</option>
+    </select>
+
+    <label>Mission Type:</label>
+    <select id="mission">
+      <option value="explore a black hole">explore a black hole</option>
+      <option value="rescue a lost crew">rescue a lost crew</option>
+      <option value="collect rare minerals">collect rare minerals</option>
+    </select>
+
+    <button onclick="generateStory()">🚀 Generate Story</button>
+
+    <div id="story"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

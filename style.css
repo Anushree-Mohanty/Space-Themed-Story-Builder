@@ -1,0 +1,40 @@
+body {
+  background: linear-gradient(to bottom, #0f0f3d, #000);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  padding: 30px;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  background: rgba(0, 0, 50, 0.6);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px white;
+}
+
+input, select, button {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  background: #00f5ff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#story {
+  margin-top: 20px;
+  padding: 15px;
+  background: #222;
+  border-radius: 10px;
+  font-size: 1.1em;
+}
