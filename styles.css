@@ -7,39 +7,22 @@
 
 body {
   font-family: "Orbitron", sans-serif;
-  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+  background: transparent;
   color: #ffffff;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Animated stars background */
-.stars {
+/* Interactive particles background */
+#particles-js {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  background-image: radial-gradient(2px 2px at 20px 30px, #eee, transparent),
-    radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
-    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
-    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.6), transparent),
-    radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
-  background-repeat: repeat;
-  background-size: 200px 100px;
-  animation: sparkle 20s linear infinite;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
   z-index: -1;
-}
-
-@keyframes sparkle {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-100px);
-  }
+  top: 0;
+  left: 0;
 }
 
 .container {
@@ -82,6 +65,31 @@ header {
   font-size: 1.2rem;
   color: #b8b8b8;
   margin-bottom: 20px;
+}
+
+.nav-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(78, 205, 196, 0.2);
+  color: #4ecdc4;
+  text-decoration: none;
+  border-radius: 25px;
+  border: 1px solid #4ecdc4;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  background: rgba(78, 205, 196, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
 }
 
 .story-builder {

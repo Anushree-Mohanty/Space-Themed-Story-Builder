@@ -8,9 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        .nav-links {
+            margin-top: 10px;
+        }
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-    <div class="stars"></div>
+    <div id="particles-js"></div>
     <div class="container">
         <header>
             <h1 class="title">🚀 Cosmic Story Builder 🌌</h1>
@@ -104,6 +115,60 @@
         </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+          "particles": {
+            "number": {
+              "value": 120,
+              "density": { "enable": true, "value_area": 800 }
+            },
+            "color": { "value": ["#4ecdc4", "#45b7d1", "#96ceb4", "#ff6b6b"] },
+            "shape": { "type": "circle" },
+            "opacity": { 
+              "value": 0.6,
+              "random": true,
+              "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 }
+            },
+            "size": { 
+              "value": 3, 
+              "random": true,
+              "anim": { "enable": true, "speed": 2, "size_min": 0.1 }
+            },
+            "line_linked": {
+              "enable": true,
+              "distance": 150,
+              "color": "#4ecdc4",
+              "opacity": 0.3,
+              "width": 1
+            },
+            "move": {
+              "enable": true,
+              "speed": 2,
+              "direction": "none",
+              "random": true,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false
+            }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": { "enable": true, "mode": "grab" },
+              "onclick": { "enable": true, "mode": "push" }
+            },
+            "modes": {
+              "grab": { 
+                "distance": 200,
+                "line_linked": { "opacity": 0.8 }
+              },
+              "push": { "particles_nb": 4 }
+            }
+          },
+          "retina_detect": true
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

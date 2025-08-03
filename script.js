@@ -1,8 +1,47 @@
-        class SpaceStoryBuilder {
+class SpaceStoryBuilder {
   constructor() {
     this.initializeElements()
     this.bindEvents()
     this.storyTemplates = this.getStoryTemplates()
+    this.isEditing = false
+    this.editingIndex = undefined
+    this.checkForEditMode() // Add this line
+  }
+
+  checkForEditMode() {
+    const urlParams = new URLSearchParams(window.location.search)
+    const editingData = sessionStorage.getItem("editingStory")
+
+    if (urlParams.get("edit") === "true" && editingData) {
+      const { story, index } = JSON.parse(editingData)
+      this.loadStoryForEditing(story, index)
+      sessionStorage.removeItem("editingStory")
+    }
+  }
+
+  loadStoryForEditing(story, index) {
+    // Populate form with story data
+    this.protagonist.value = story.settings.protagonist
+    this.setting.value = story.settings.setting
+    this.conflict.value = story.settings.conflict
+    this.companion.value = story.settings.companion
+    this.customElement.value = story.settings.customElement
+
+    // Display the current story
+    this.displayStory({
+      title: story.title,
+      content: story.content,
+    })
+
+    // Store editing info
+    this.editingIndex = index
+    this.isEditing = true
+
+    // Update button text
+    this.generateBtn.textContent = "Update Story"
+
+    // Show notification
+    this.showTemporaryMessage("Story loaded for editing! 📝")
   }
 
   initializeElements() {
@@ -63,7 +102,40 @@
     setTimeout(() => {
       const story = this.createStory()
       this.displayStory(story)
+
+      // If editing, update the existing story
+      if (this.isEditing && this.editingIndex !== undefined) {
+        this.updateExistingStory(story)
+      }
     }, 1500)
+  }
+
+  updateExistingStory(story) {
+    const savedStories = JSON.parse(localStorage.getItem("spaceStories") || "[]")
+
+    if (savedStories[this.editingIndex]) {
+      savedStories[this.editingIndex] = {
+        ...savedStories[this.editingIndex],
+        title: story.title,
+        content: story.content,
+        settings: {
+          protagonist: this.protagonist.value,
+          setting: this.setting.value,
+          conflict: this.conflict.value,
+          companion: this.companion.value,
+          customElement: this.customElement.value,
+        },
+        timestamp: new Date().toISOString(), // Update timestamp
+      }
+
+      localStorage.setItem("spaceStories", JSON.stringify(savedStories))
+      this.showTemporaryMessage("Story updated successfully! ✨")
+
+      // Reset editing mode
+      this.isEditing = false
+      this.editingIndex = undefined
+      this.generateBtn.textContent = "Generate Story"
+    }
   }
 
   createStory() {
@@ -186,14 +258,19 @@
     this.customElement.value = ""
 
     this.storyDisplay.innerHTML = `
-            <div class="placeholder">
-                <div class="planet-icon">🪐</div>
-                <p>Your cosmic adventure will appear here...</p>
-                <p class="hint">Fill out the form and click "Generate Story" to begin!</p>
-            </div>
-        `
+    <div class="placeholder">
+      <div class="planet-icon">🪐</div>
+      <p>Your cosmic adventure will appear here...</p>
+      <p class="hint">Fill out the form and click "Generate Story" to begin!</p>
+    </div>
+  `
 
     this.storyActions.style.display = "none"
+
+    // Reset editing mode
+    this.isEditing = false
+    this.editingIndex = undefined
+    this.generateBtn.textContent = "Generate Story"
   }
 
   saveStory() {
