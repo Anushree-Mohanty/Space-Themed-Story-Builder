@@ -1,4 +1,4 @@
-class SpaceStoryBuilder {
+        class SpaceStoryBuilder {
   constructor() {
     this.initializeElements()
     this.bindEvents()
