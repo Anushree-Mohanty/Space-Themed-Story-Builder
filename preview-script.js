@@ -167,7 +167,29 @@ class StoryGallery {
     this.currentStory = this.stories[storyIndex]
 
     this.modalTitle.textContent = this.currentStory.title
-    this.modalContent.textContent = this.currentStory.content
+
+    // Format story content with images if they exist
+    let contentHtml = ""
+    if (this.currentStory.images && this.currentStory.images.length > 0) {
+      contentHtml += `
+        <div class="modal-story-images">
+          ${this.currentStory.images
+            .map(
+              (img) => `
+            <div class="modal-image-container">
+              <img src="${img.url}" alt="${img.title}" class="modal-story-image" loading="lazy">
+              <div class="modal-image-caption">${img.title}</div>
+            </div>
+          `,
+            )
+            .join("")}
+        </div>
+      `
+    }
+
+    contentHtml += `<div class="modal-story-text">${this.formatModalContent(this.currentStory.content)}</div>`
+
+    this.modalContent.innerHTML = contentHtml
     this.modalDate.textContent = this.formatDate(this.currentStory.timestamp)
     this.modalHero.textContent = this.capitalizeFirst(this.currentStory.settings.protagonist)
     this.modalSetting.textContent = this.currentStory.settings.setting
@@ -177,6 +199,13 @@ class StoryGallery {
 
     // Add animation
     this.modal.querySelector(".modal-content").style.animation = "modalSlideIn 0.3s ease-out"
+  }
+
+  formatModalContent(content) {
+    return content
+      .split("\n\n")
+      .map((paragraph) => `<p class="modal-story-paragraph">${paragraph}</p>`)
+      .join("")
   }
 
   hideModal() {
