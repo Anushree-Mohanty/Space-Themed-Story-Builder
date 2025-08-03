@@ -28,4 +28,6 @@ function generateStory() {
   `;
 
   document.getElementById('story').innerHTML = story;
+  document.querySelector("button").style.fontFamily = "Orbitron, sans-serif";
+  document.querySelector("button").style.fontSize = "16px";
 }

@@ -25,10 +25,24 @@ input, select, button {
 }
 
 button {
+  font-family: 'Orbitron', sans-serif; /* Try 'Roboto', 'Courier New', or any other */
+  font-size: 16px;
+  font-weight: bold;
+}
+
+button {
   background: #00f5ff;
   color: #000;
   font-weight: bold;
   cursor: pointer;
+}
+
+label {
+  font-family: 'Orbitron', sans-serif; /* Replace with any font you've linked */
+  font-size: 1rem;
+  color: #ffffff; /* Optional: choose a color that suits your theme */
+  margin-top: 10px;
+  display: block;
 }
 
 #story {
